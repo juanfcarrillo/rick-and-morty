@@ -2,7 +2,7 @@ import { NavElement } from '../NavElement'
 import { NavLogo } from '../NavLogo'
 import './styles/NavBar.css'
 
-import { RiAliensFill } from 'react-icons/Ri/index'
+import { RiAliensFill } from 'react-icons/ri'
 import { IoLocationSharp } from 'react-icons/io5'
 import { Link } from 'react-router-dom'
 
