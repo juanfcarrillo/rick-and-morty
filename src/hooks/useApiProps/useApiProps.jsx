@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import useApi from '../UseApi/UseApi'
+import useApi from '../useApi/useApi'
 
 export const useApiProps = ({ baseURL, emptyModelType }) => {
   const [pageNumber, setPageNumber] = useState(1)
