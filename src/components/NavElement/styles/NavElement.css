@@ -1,0 +1,10 @@
+.nav-element-container{
+    display: flex;
+    align-items: center;
+    gap: .5em;
+}
+.nav-element-content{
+    color: white;
+    font-size: 1.1em;
+    font-weight: 600;
+}

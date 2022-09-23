@@ -1,0 +1,31 @@
+.navbar{
+    background: linear-gradient(130deg, rgba(54,155,17,1) 19%, rgba(163,247,71,1) 100%);
+    padding: 1em 4.5em 1em 4.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.navbar-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 800px;
+}
+.nav-left{
+    display: flex;
+    align-items: center;
+}
+.nav-right{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.2em;
+}
+
+@media screen and (max-width: 800px) {
+    .nav-right{
+        flex-direction: column;
+    }
+}
+    

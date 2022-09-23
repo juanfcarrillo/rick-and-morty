@@ -1,0 +1,25 @@
+.cards-container {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 800px;
+  justify-content: space-around;
+}
+
+.characters-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  margin: 2em 4em 2em 4em;
+}
+
+.button-container {
+  position: sticky;
+  top: 1.5em;
+  z-index: 1001;
+  display: flex;
+  gap: 20px;
+}

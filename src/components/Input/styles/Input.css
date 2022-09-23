@@ -1,0 +1,51 @@
+/* From uiverse.io by @G4b413l */
+.group {
+  position: relative;
+  max-width: 150px;
+  width: 6em;
+}
+
+.input {
+  font-size: 13px;
+  padding: 5px 5px 5px 2px;
+  display: block;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #515151;
+  background: transparent;
+  outline: none;
+}
+
+.input-label {
+  color: #999;
+  font-size: 14px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 5px;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+
+.input:focus~.input-label,
+.input:valid~.input-label {
+  top: -10px;
+  font-size: 14px;
+}
+
+.input:focus~.highlight {
+  animation: inputHighlighter 0.3s ease;
+}
+
+@keyframes inputHighlighter {
+  from {
+    background: #5264AE;
+  }
+
+  to {
+    width: 0;
+    background: transparent;
+  }
+}

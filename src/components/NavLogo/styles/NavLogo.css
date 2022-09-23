@@ -1,0 +1,10 @@
+.icon-name{
+    color: white;
+    font-weight: 600;
+}
+.nav-logo-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
