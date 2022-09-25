@@ -1,4 +1,4 @@
-.location-card {
+.episode-card{
   box-shadow: 0 10px 20px 4px rgba(35, 35, 35, .1);
   min-height: 150px;
   width: 330px;
@@ -9,13 +9,13 @@
   overflow: hidden;
   position: relative;
 }
-
-.location-type{
+.card-name{
+  margin-bottom: .3em;
+}
+.episode-type{
   position: absolute;
-  right: 0;
-  top: 0;
   height: 100%;
   width: 2em;
-  background-color: blue;
+  right: 0;
+  top: 0;
 }
-

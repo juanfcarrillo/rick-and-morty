@@ -1,49 +1,41 @@
 import { useEffect, useState } from 'react'
-import useApi from '../useApi/useApi'
+import { getFilteredApi } from '../../services'
 
-export const useApiProps = ({ baseURL, emptyModelType }) => {
-  const [pageNumber, setPageNumber] = useState(1)
-  const { setProperties, response, loading, error } = useApi({
-    baseURL,
-    props: {
-      page: pageNumber
-    }
-  })
-  const [props, setProps] = useState({ ...emptyModelType })
+export const useApiProps = ({ baseURL, emptyModelType, initialProps }) => {
+  const [insideProps, setInsideProps] = useState({ ...emptyModelType, page: 1, ...initialProps })
+  const [response, setResponse] = useState()
+  const [loading, setLoading] = useState(true)
+  // const [error, setError] = useState()
+  const fetchProperties = getFilteredApi(baseURL)
 
-  useEffect(() => {
-    if (pageNumber <= response?.info?.pages && pageNumber > 0) {
-      setProperties({
-        page: pageNumber
-      })
-    } else if (!(pageNumber <= response?.info?.pages)) {
-      setPageNumber(1)
-    } else {
-      setPageNumber(response?.info?.pages)
-    }
-  }, [pageNumber])
+  const setProps = (newProperties) => {
+    const newProps = { ...insideProps, ...newProperties }
+    setInsideProps(newProps)
+  }
+
+  const fetchCharacters = async () => {
+    const fetchedCharacters = await fetchProperties(insideProps)
+    setResponse(fetchedCharacters)
+    setLoading(false)
+  }
 
   useEffect(() => {
-    const valuesProps = Object.values(props)
-
-    const haveSomeProps = valuesProps.some((elem) => elem)
-
-    if (haveSomeProps) {
-      setProperties({
-        ...props,
+    if (insideProps.page > response?.info?.pages) {
+      setInsideProps({
+        ...insideProps,
         page: 1
       })
-      setPageNumber(1)
+    } else if (insideProps.page < 1) {
+      setInsideProps({
+        ...insideProps,
+        page: response?.info?.pages
+      })
     } else {
-      setProperties({
-        ...emptyModelType,
-        page: 1
-      })
-      setPageNumber(1)
+      fetchCharacters()
     }
-  }, [props])
+  }, [insideProps])
 
-  return { response, loading, error, props, setProps, setPageNumber }
+  return { response, props: insideProps, setProps, loading }
 }
 
 export default useApiProps

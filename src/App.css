@@ -11,3 +11,16 @@
   display: flex;
   gap: 20px;
 }
+.cards-container{
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 800px;
+  justify-content: space-around;
+}
+.props-container{
+  position: relative;
+  padding-right: 1em;
+  padding-bottom: 1em;
+}

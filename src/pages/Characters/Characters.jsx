@@ -2,21 +2,21 @@ import {
   AiOutlineArrowLeft as LeftArrowIcon, AiOutlineArrowRight as RightArrowIcon
 } from 'react-icons/ai'
 import { characterEmptyType } from '../../../models'
-import { Input, StickyButton } from '../../components'
+import { Input, Loader, StickyButton } from '../../components'
 import { CharacterCard } from '../../components/CharacterCard'
 import { useApiProps } from '../../hooks'
 import './styles/characters.css'
 
 const Characters = () => {
-  const { response, loading, props, setProps, setPageNumber } = useApiProps({ baseURL: 'https://rickandmortyapi.com/api/character', emptyModelType: characterEmptyType })
+  const { response, props, setProps, loading } = useApiProps({ baseURL: 'https://rickandmortyapi.com/api/character', emptyModelType: characterEmptyType })
   return (
     <div className="characters-container">
       <div className="button-container">
-        <Input value={props.name} onChange={e => setProps({ name: e.target.value })}/>
-        <StickyButton onClick={() => setPageNumber((pageNum) => pageNum - 1)}>
+        <Input value={props.name} onChange={e => setProps({ ...props, name: e.target.value, page: 1 })}/>
+        <StickyButton onClick={() => setProps({ ...props, page: props.page - 1 })}>
           <LeftArrowIcon /> Previous
         </StickyButton>
-        <StickyButton onClick={() => setPageNumber((pageNum) => pageNum + 1)}>
+        <StickyButton onClick={() => setProps({ ...props, page: props.page + 1 })}>
           Next
           <RightArrowIcon />
         </StickyButton>
@@ -26,7 +26,7 @@ const Characters = () => {
           ? response?.results?.map((elem) => {
             return <CharacterCard key={elem.id} {...elem} />
           })
-          : <>loading</>}
+          : <Loader />}
       </div>
     </div>
   )

@@ -6,11 +6,16 @@ const LocationCard = ({ name, type, dimension, residents, ...props }) => {
 
   return (
     <div className="location-card">
-      <h2>{name}</h2>
-      <p>Type: {type}</p>
-      <p>Dimension: {dimension}</p>
-      <p>Residents: {residents.length}</p>
-      <div className="location-type" style={{ backgroundColor: `${locationColor}` }}/>
+      <div className="props-container">
+        <h2>{name}</h2>
+        <p>Type: {type}</p>
+        <p>Dimension: {dimension}</p>
+        <p>Residents: {residents.length}</p>
+      </div>
+      <div
+        className="location-type"
+        style={{ backgroundColor: `${locationColor}` }}
+      />
     </div>
   )
 }

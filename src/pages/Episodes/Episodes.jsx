@@ -3,18 +3,19 @@ import {
   AiOutlineArrowRight as RightArrowIcon
 } from 'react-icons/ai'
 import { locationEmptyType } from '../../../models'
-import { Input, Loader, LocationCard, StickyButton } from '../../components'
+import { Input, Loader, StickyButton } from '../../components'
+import EpisodeCard from '../../components/EpisodeCard/EpisodeCard'
 import { useApiProps } from '../../hooks'
-import './styles/Locations.css'
+import './styles/Episodes.css'
 
-const Locations = () => {
+const Episodes = () => {
   const { response, loading, props, setProps } = useApiProps({
-    baseURL: 'https://rickandmortyapi.com/api/location',
+    baseURL: 'https://rickandmortyapi.com/api/episode',
     emptyModelType: locationEmptyType
   })
 
   return (
-    <div className="locations-container">
+    <div className="episodes-container">
       <div className="button-container">
         <Input
           value={props.name}
@@ -38,7 +39,7 @@ const Locations = () => {
         {!loading
           ? (
               response?.results?.map((elem) => {
-                return <LocationCard key={elem.id} {...elem} />
+                return <EpisodeCard key={elem.id} {...elem} />
               })
             )
           : (
@@ -49,4 +50,4 @@ const Locations = () => {
   )
 }
 
-export default Locations
+export default Episodes

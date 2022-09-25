@@ -2,7 +2,7 @@ import { NavElement } from '../NavElement'
 import { NavLogo } from '../NavLogo'
 import './styles/NavBar.css'
 
-import { RiAliensFill } from 'react-icons/ri'
+import { RiAliensFill, RiPagesLine } from 'react-icons/ri'
 import { IoLocationSharp } from 'react-icons/io5'
 import { Link } from 'react-router-dom'
 
@@ -27,6 +27,11 @@ const NavBar = () => {
             content={'Locations'}
             Icon={<IoLocationSharp fill="white" />}
             to={`/${MainRoutes.BASE}/${MainRoutes.LOCATIONS}`}
+          />
+          <NavElement
+            content={'Episodes'}
+            Icon={<RiPagesLine fill="white" />}
+            to={`/${MainRoutes.BASE}/${MainRoutes.EPISODES}`}
           />
         </div>
       </div>
