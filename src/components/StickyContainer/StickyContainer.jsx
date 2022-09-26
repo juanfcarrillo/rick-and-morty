@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 const StickyContainer = styled.div`
+  display: flex;
   padding: 1em;
   max-width: 90vw;
   background-color: white;
@@ -10,7 +11,6 @@ const StickyContainer = styled.div`
   position: sticky;
   top: 1.5em;
   z-index: 1001;
-  display: flex;
   gap: 20px;
 `
 
