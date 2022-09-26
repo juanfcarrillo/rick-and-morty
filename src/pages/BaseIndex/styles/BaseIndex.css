@@ -8,11 +8,3 @@
   height: 100%;
   padding: 20px;
 }
-.base-index-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 20px;
-  margin: 2em 4em 2em 4em;
-}

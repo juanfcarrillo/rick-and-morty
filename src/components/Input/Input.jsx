@@ -6,7 +6,6 @@ const Input = (props, ref) => {
     <div className="group">
       <input ref={ref} required type="text" className="input" {...props}/>
       <span className="highlight"></span>
-      <span className="bar"></span>
       <label className='input-label'>Name</label>
     </div>
   )

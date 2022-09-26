@@ -1,9 +1,9 @@
 import './styles/CharacterCard.css'
 import { getCharacterColor } from '../../utils/character-utils/characterUtils'
 import { RiAliensLine as AlienIcon } from 'react-icons/ri'
-import { CharacterPropierties } from '../CharacterPropierties'
 import { useState } from 'react'
 import { CharacterInfo } from '../CharacterInfo'
+import { CharacterProperties } from '../CharacterProperties'
 
 const CharacterCard = (props) => {
   const characterColor = getCharacterColor({ name: props.name })
@@ -27,7 +27,7 @@ const CharacterCard = (props) => {
         </div>
         <h4 className="character-name">{props.name}</h4>
       </div>
-      <CharacterPropierties {...props}/>
+      <CharacterProperties {...props} />
       <div
         className="bottom-description"
         style={{ backgroundColor: `${characterColor}` }}

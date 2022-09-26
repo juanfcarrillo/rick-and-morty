@@ -1,24 +1,3 @@
-.button-container {
-  padding: 1em;
-  max-width: 90vw;
-  background-color: white;
-  box-shadow: 0 10px 20px 4px rgba(35, 35, 35, .1);
-  border: 1px solid rgb(108, 108, 108);
-  border-radius: 10px;
-  position: sticky;
-  top: 1.5em;
-  z-index: 1001;
-  display: flex;
-  gap: 20px;
-}
-.cards-container{
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  max-width: 800px;
-  justify-content: space-around;
-}
 .props-container{
   position: relative;
   padding-right: 1em;

@@ -1,5 +1,5 @@
 import { getCharacterColor } from '../../utils/character-utils/characterUtils'
-import { CharacterPropierties } from '../CharacterPropierties'
+import { CharacterProperties } from '../CharacterProperties'
 import './styles/CharacterInfo.css'
 
 const CharacterInfo = ({ image, origin, location, name, ...props }) => {
@@ -26,7 +26,7 @@ const CharacterInfo = ({ image, origin, location, name, ...props }) => {
             <p className="strong">Location</p>
           </div>
         </div>
-        <CharacterPropierties {...props}/>
+        <CharacterProperties {...props} />
       </div>
       <div className="character-type" style={{ backgroundColor: `${characterColor}` }}></div>
     </div>

@@ -10,7 +10,7 @@
   transition: all 0.2s ease;
 }
 .item-image-container{
-  width: 300px;
+  max-width: 300px;
   max-height: 250px;
   display: flex;
   align-items: center;
@@ -19,7 +19,8 @@
 }
 .item-image{
   width: 100%;
-  height: auto;
+  min-height: 250px;
+  object-fit: cover;
 }
 .item-title{
   display: flex;

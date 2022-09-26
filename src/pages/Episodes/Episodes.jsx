@@ -3,7 +3,14 @@ import {
   AiOutlineArrowRight as RightArrowIcon
 } from 'react-icons/ai'
 import { locationEmptyType } from '../../../models'
-import { Input, Loader, StickyButton } from '../../components'
+import {
+  Button,
+  CardsContainer,
+  Input,
+  Loader,
+  PageContainer,
+  StickyContainer
+} from '../../components'
 import EpisodeCard from '../../components/EpisodeCard/EpisodeCard'
 import { useApiProps } from '../../hooks'
 import './styles/Episodes.css'
@@ -14,39 +21,31 @@ const Episodes = () => {
     emptyModelType: locationEmptyType
   })
 
+  if (loading) return <Loader />
+
   return (
-    <div className="episodes-container">
-      <div className="button-container">
+    <PageContainer>
+      <StickyContainer>
         <Input
           value={props.name}
           onChange={(e) =>
             setProps({ ...props, name: e.target.value, page: 1 })
           }
         />
-        <StickyButton
-          onClick={() => setProps({ ...props, page: props.page - 1 })}
-        >
+        <Button onClick={() => setProps({ ...props, page: props.page - 1 })}>
           <LeftArrowIcon /> Previous
-        </StickyButton>
-        <StickyButton
-          onClick={() => setProps({ ...props, page: props.page + 1 })}
-        >
+        </Button>
+        <Button onClick={() => setProps({ ...props, page: props.page + 1 })}>
           Next
           <RightArrowIcon />
-        </StickyButton>
-      </div>
-      <div className="cards-container">
-        {!loading
-          ? (
-              response?.results?.map((elem) => {
-                return <EpisodeCard key={elem.id} {...elem} />
-              })
-            )
-          : (
-          <Loader />
-            )}
-      </div>
-    </div>
+        </Button>
+      </StickyContainer>
+      <CardsContainer>
+        {response?.results?.map((elem) => {
+          return <EpisodeCard key={elem.id} {...elem} />
+        })}
+      </CardsContainer>
+    </PageContainer>
   )
 }
 
