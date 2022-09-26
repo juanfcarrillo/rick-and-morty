@@ -24,7 +24,6 @@ const NavBar = () => {
         </div>
         <div
           tabIndex={0}
-          onBlur={() => navRightRef.current.classList.remove('active')}
           ref={navRightRef}
           className='nav-right'
         >
