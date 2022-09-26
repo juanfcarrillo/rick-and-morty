@@ -4,6 +4,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 .navbar-container{
     display: flex;
@@ -21,11 +22,59 @@
     align-items: center;
     justify-content: space-between;
     gap: 1.2em;
+    transition: all .1s ease-in;
+}
+.menu-icon, .hamburger-icon, .close-button{
+    display: none;
 }
 
 @media screen and (max-width: 800px) {
+    .nav-right > .nav-element{
+        display: none;
+    }
     .nav-right{
+        gap: 0;
+    }
+    .active .close-button{
+        display: block;
+        position: absolute;
+        top: 1em;
+        right: 1em;
+        width: 1.2em;
+        cursor: pointer;
+        height: auto;
+    }
+    .active > .nav-element{
+        display: flex;
+    }
+    .hamburger-icon{
+        display: block;
+        width: 2.2em;
+        height: auto;
+        cursor: pointer;
+    }
+    .active{
+        position: fixed;
+        z-index: 1002;
         flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding-top: 2em;
+        right: 0;
+        top: 0;
+        background-color: #63ca30;
+        height: 100vh;
+        transition: all .3s ease-in;
+    }
+    .active .hamburger-icon{
+        display: none;
+    }
+    .active .menu-icon{
+        display: block;
+        align-self: center;
+        width: 2.5em;
+        margin-bottom: 1.5em;
+        height: auto;
     }
 }
     

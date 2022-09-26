@@ -4,7 +4,7 @@ import './styles/NavElement.css'
 
 const NavElement = ({ Icon, content, to }) => {
   return (
-    <Link to={to}>
+    <Link className='nav-element' to={to}>
       <div className="nav-element-container">
         <p className="nav-element-content">{content}</p>
         {Icon}
