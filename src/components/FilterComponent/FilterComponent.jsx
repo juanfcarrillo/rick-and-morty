@@ -87,7 +87,7 @@ const FilterComponent = ({ apiProps, setApiProps, pagesCount, filterType }) => {
               onClick={() => handleClear(true)}
             />
               )}
-        </RowContainer>{' '}
+        </RowContainer>
         <p className='page-info'>
           {apiProps.page} / {pagesCount}
         </p>

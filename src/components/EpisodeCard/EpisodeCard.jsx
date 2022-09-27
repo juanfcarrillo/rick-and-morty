@@ -1,10 +1,11 @@
 import { getSeasonColor } from '../../utils/episode-utils'
+import { SecondaryCard } from '../SecondaryCard'
 import './styles/EpisodeCard.css'
 
 const EpisodeCard = ({ name, episode, characters, ...props }) => {
   const seasonColor = getSeasonColor({ episode })
   return (
-    <div className="episode-card">
+    <SecondaryCard>
       <div className="props-container">
         <h2 className="card-name">{name}</h2>
         <p>Air Date: {props.air_date}</p>
@@ -12,10 +13,10 @@ const EpisodeCard = ({ name, episode, characters, ...props }) => {
         <p>Characters: {characters.length}</p>
       </div>
       <div
-        className="episode-type"
+        className="type"
         style={{ backgroundColor: `${seasonColor}` }}
       />
-    </div>
+    </SecondaryCard>
   )
 }
 
