@@ -22,6 +22,11 @@ const NavBar = () => {
             <NavLogo />
           </Link>
         </div>
+        <IoIosMenu
+          onClick={() => navRightRef.current.classList.toggle('active')}
+          className='hamburger-icon'
+          fill='white'
+        />
         <div
           tabIndex={0}
           ref={navRightRef}
@@ -30,11 +35,6 @@ const NavBar = () => {
           <AiOutlineClose
             className='close-button'
             onClick={() => navRightRef.current.classList.remove('active')}
-            fill='white'
-          />
-          <IoIosMenu
-            onClick={() => navRightRef.current.classList.toggle('active')}
-            className='hamburger-icon'
             fill='white'
           />
           <SiDatabricks className='menu-icon' fill='white' />
