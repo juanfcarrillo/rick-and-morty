@@ -10,7 +10,6 @@ export const locationEmptyType = {
 
 export const locationEmptyTypeFilter = {
   name: '',
-  air_date: '',
-  episode: '',
-  characters: ''
+  type: '',
+  dimension: ''
 }
