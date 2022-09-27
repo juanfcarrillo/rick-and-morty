@@ -39,6 +39,7 @@ const NavBar = () => {
           />
           <SiDatabricks className='menu-icon' fill='white' />
           <NavElement
+            onClick={() => console.log('clicked')}
             content={'Characters'}
             Icon={<RiAliensFill fill='white' />}
             to={`/${MainRoutes.BASE}/${MainRoutes.CHARACTERS}`}

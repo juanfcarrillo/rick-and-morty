@@ -1,45 +1,29 @@
+import { episodeEmptyType, episodeEmptyTypeFilter } from '../../../models'
 import {
-  AiOutlineArrowLeft as LeftArrowIcon,
-  AiOutlineArrowRight as RightArrowIcon
-} from 'react-icons/ai'
-import { locationEmptyType } from '../../../models'
-import {
-  Button,
   CardsContainer,
-  Input,
-  Loader,
-  PageContainer,
-  StickyContainer
+  FilterComponent, Loader,
+  PageContainer
 } from '../../components'
 import EpisodeCard from '../../components/EpisodeCard/EpisodeCard'
 import { useApiProps } from '../../hooks'
 import './styles/Episodes.css'
 
 const Episodes = () => {
-  const { response, loading, props, setProps } = useApiProps({
+  const { response, loading, apiProps, setApiProps } = useApiProps({
     baseURL: 'https://rickandmortyapi.com/api/episode',
-    emptyModelType: locationEmptyType
+    emptyModelType: episodeEmptyType
   })
 
   if (loading) return <Loader />
 
   return (
     <PageContainer>
-      <StickyContainer>
-        <Input
-          value={props.name}
-          onChange={(e) =>
-            setProps({ ...props, name: e.target.value, page: 1 })
-          }
-        />
-        <Button onClick={() => setProps({ ...props, page: props.page - 1 })}>
-          <LeftArrowIcon /> Previous
-        </Button>
-        <Button onClick={() => setProps({ ...props, page: props.page + 1 })}>
-          Next
-          <RightArrowIcon />
-        </Button>
-      </StickyContainer>
+      <FilterComponent
+        apiProps={apiProps}
+        setApiProps={setApiProps}
+        pagesCount={response?.info?.pages}
+        filterType={episodeEmptyTypeFilter}
+      />
       <CardsContainer>
         {response?.results?.map((elem) => {
           return <EpisodeCard key={elem.id} {...elem} />

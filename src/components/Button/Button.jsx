@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 const Button = styled.button`
   display: flex;
@@ -9,12 +9,14 @@ const Button = styled.button`
   padding-right: 1em;
   border: none;
   box-shadow: 0 10px 20px 4px rgba(35, 35, 35, 0.1);
+  ${(props) => props.bordered && css`border: 1px solid #515151;`}
   background-color: white;
   border-radius: 8px;
 
   &:hover {
     cursor: pointer;
     outline: 1px solid #008bf8;
+    border: none;
   }
   
   &:active {

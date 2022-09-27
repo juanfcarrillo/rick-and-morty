@@ -12,3 +12,10 @@ export const characterEmptyType = {
   url: '',
   created: ''
 }
+export const characterEmptyTypeFilter = {
+  name: '',
+  status: '',
+  species: '',
+  type: '',
+  gender: ''
+}

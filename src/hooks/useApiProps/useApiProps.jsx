@@ -35,7 +35,7 @@ export const useApiProps = ({ baseURL, emptyModelType, initialProps }) => {
     }
   }, [insideProps])
 
-  return { response, props: insideProps, setProps, loading }
+  return { response, apiProps: insideProps, setApiProps: setProps, loading }
 }
 
 export default useApiProps

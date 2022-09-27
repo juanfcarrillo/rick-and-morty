@@ -1,14 +1,15 @@
-import { forwardRef } from 'react'
+import { InputGroup } from '../InputGroup'
 import './styles/Input.css'
 
-const Input = (props, ref) => {
+const Input = ({ bordered, labelContent, ...props }) => {
+  console.log(props.value)
   return (
-    <div className="group">
-      <input ref={ref} required type="text" className="input" {...props}/>
-      <span className="highlight"></span>
-      <label className='input-label'>Name</label>
-    </div>
+    <InputGroup value={props.value} bordered={!!bordered}>
+      <input type='text' className='input' {...props} />
+      <span className='highlight'></span>
+      <label className='input-label'>{labelContent || 'Name'}</label>
+    </InputGroup>
   )
 }
 
-export default forwardRef(Input)
+export default Input

@@ -7,3 +7,10 @@ export const locationEmptyType = {
   url: '',
   created: ''
 }
+
+export const locationEmptyTypeFilter = {
+  name: '',
+  air_date: '',
+  episode: '',
+  characters: ''
+}
