@@ -2,7 +2,6 @@ import { InputGroup } from '../InputGroup'
 import './styles/Input.css'
 
 const Input = ({ bordered, labelContent, ...props }) => {
-  console.log(props.value)
   return (
     <InputGroup value={props.value} bordered={!!bordered}>
       <input type='text' className='input' {...props} />
